@@ -1,0 +1,13 @@
+{
+    "require": {
+        "mongodb/mongodb": "^1.19"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+baixar o WSL 2
+
+baixar mongoDB Compass
+
+baixar docker desktop, settings/Resources/WSL integration e ativar Enable integration e a distro que esta usando.
+
+baixar projeto na sua maquina
+
+docker-compose build
+
+docker-compose up -d
+
+(so para melhor visualizacao){
+entrar no shell do WSL digite ip addr show procurar inet e pegar o ip do WSL sem o /** algo parecido com isso: 172.19.48.1
+
+no seu mongoDB Compass URI mongodb://<seu IP WSL>:27017/ e clicar em connect
+}
