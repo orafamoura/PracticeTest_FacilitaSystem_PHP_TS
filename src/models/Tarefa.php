@@ -5,33 +5,27 @@ use src\models\enums\Status;
 
 class Tarefa
 {
-    private ?int $id;
+    private ?string $id;
     private string $titulo;
     private string $descricao;
     private Status $status;
-    private string $dataVencimento;
-    private string $createdAt;
-    private string $updatedAt;
+    private $dataVencimento;
+    private $createdAt;
+    private $updatedAt;
 
     public function __construct(
-        ?int $id,
+        ?string $id,
         string $titulo,
         string $descricao,
-        Status $status,
-        string $dataVencimento,
-        string $createdAt,
-        string $updatedAt)
+        Status $status)
         {
             $this->id = $id;
             $this->titulo = $titulo;
             $this->descricao = $descricao;
             $this->status = $status;
-            $this->dataVencimento = $dataVencimento;
-            $this->createdAt = $createdAt;
-            $this->updatedAt = $updatedAt;
         }
 
-        public function getId(): ?int
+        public function getId(): ?string
         {
             return $this->id;
         }
@@ -66,32 +60,32 @@ class Tarefa
             $this->status = $status;
         }
 
-        public function getDataVencimento(): string
+        public function getDataVencimento()
         {
             return $this->dataVencimento;
         }
 
-        public function setDataVencimento(string $dataVencimento): void
+        public function setDataVencimento($dataVencimento): void
         {
             $this->dataVencimento = $dataVencimento;
         }
 
-        public function getCreatedAt(): string
+        public function getCreatedAt()
         {
             return $this->createdAt;
         }
 
-        public function setCreatedAt(string $createdAt): void
+        public function setCreatedAt($createdAt): void
         {
             $this->createdAt = $createdAt;
         }
 
-        public function getUpdatedAt(): string
+        public function getUpdatedAt()
         {
             return $this->updatedAt;
         }
 
-        public function setUpdatedAt(string $updatedAt): void
+        public function setUpdatedAt($updatedAt): void
         {
             $this->updatedAt = $updatedAt;
         }
