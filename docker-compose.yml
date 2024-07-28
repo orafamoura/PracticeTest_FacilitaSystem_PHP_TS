@@ -16,7 +16,7 @@ services:
     networks:
       - mynetwork
     volumes:
-      - ./html:/var/www/html
+      - .:/var/www/html
 
   nginx:
     image: nginx:latest
@@ -27,6 +27,7 @@ services:
       - php-mongodb-api-web
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - .:/var/www/html
     networks:
       - mynetwork
 
@@ -36,7 +37,7 @@ services:
       dockerfile: Dockerfile
     container_name: php-cli
     volumes:
-      - ./:/var/www/html
+      - .:/var/www/html
     working_dir: /var/www/html
     depends_on:
       - mongodb
