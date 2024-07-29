@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de tarefas</title>
+    <script src="/public/templates/js/scriptGerenciador.js" type="module"></script>
+
+    <link rel="stylesheet" href="/public/templates/css/stylesGerenciador.css">
+</head>
+<body>
+    <h1>Tarefas</h1>
+    <div style="
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;">
+        <h2 class="nova-tarefa-title">Nova Tarefa</h2>
+        <form class="container-nova-tarefa"id="add-task-form">
+            <div>
+                <select id="status" style="
+                border-radius: 10px;
+                float: right;
+                height: 23px;
+                width: 130px;
+                text-align: center;">
+                <option value="NAOINICIADA">Nao iniciada</option>
+                <option value="EMPROGRESSO" selected>Em progresso</option>
+                <option value="CONCLUIDA">Concluida</option>
+            </select>
+            </div>
+            <div style="display: flex;">
+               <input type="text" id="titulo" placeholder="Título" required style="width: 100%; margin-right: 10px;"> 
+               <input type="date" id="dataVencimento" required>
+            </div>
+            <input type="text" id="descricao" placeholder="Descrição
+            " required>
+            <button type="submit"
+            style="width: 200px;
+            text-align: center;
+            justify-self: center;">Adicionar Tarefa</button>
+        </form>
+
+    </div>
+
+    <div class="container-tarefas">
+        <div style="display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;">
+            <div style="display: flex;
+            width: 100%;
+            position: relative;
+            top: 14px;
+            justify-content: space-around;">
+                <div class="titulo-status" style="background-color: #faedcc;">
+                    <div id="circle" style="background: #c39747;">       
+                    </div>
+                    <span>Nao iniciado</span>
+                </div>
+                <div class="titulo-status" style="background-color: #d6e4ee;">
+                    <div id="circle" style="background: #6b96b9;">       
+                    </div>
+                    <span>Em progresso</span>
+                </div>
+                <div class="titulo-status" style="background-color: #c9ffdb;">
+                    <div id="circle" style="background: #6bb984;">       
+                    </div>
+                    <span>Concluido</span>
+                </div>
+            </div>
+            <div class="wraper-flex">
+                <div id="nao-iniciado" class="coluna-cards">
+                    <!--Cards adicionados dinamicamente --> 
+                </div>   
+                <div id="em-progresso" class="coluna-cards">
+                    <!--Cards adicionados dinamicamente -->
+                </div>
+                <div id="concluido" class="coluna-cards">
+                    <!--Cards adicionados dinamicamente --> 
+                </div>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
+<!-- Modal de Edição -->
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 style="text-align: center;">Editar Tarefa</h2>
+      <form id="edit-task-form">
+        <input type="hidden" id="edit-task-id" name="id">
+        <div class="container-modal">
+            <div>
+                <label for="edit-titulo">Título:</label>              
+                <input type="text" id="edit-titulo" name="titulo" required>
+                </div>
+            <div style="
+            display: flex;
+            flex-direction: column;">
+                <label for="edit-descricao"></label>
+                <textarea id="edit-descricao" name="descricao" required style="
+                min-height: 100px;
+                max-height: 100px;
+                overflow-y: scroll;
+                min-width: 250px;
+                max-width: 250px;"></textarea>
+            </div>
+            <div>
+                <label for="edit-dataVencimento">Data de Vencimento:</label>
+                <input type="date" id="edit-dataVencimento" name="dataVencimento" required>
+            </div>
+            <div>
+                <label for="edit-status"></label>
+                <select id="edit-status" name="status">
+                    <option value="NAOINICIADA">Não Iniciada</option>
+                    <option value="EMPROGRESSO">Em Progresso</option>
+                    <option value="CONCLUIDA">Concluída</option>
+                    </select>
+            </div>              
+        </div>
+        <button type="submit" style="
+        border-radius: 20px;
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+        padding: 2px;
+        font-size: 12px;
+        width: 90%;
+        margin: 12px 15px;">Salvar</button>
+      </form>
+    </div>
+  </div>
+  
