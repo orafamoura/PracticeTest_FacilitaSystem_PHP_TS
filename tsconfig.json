@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+      "target": "es5",
+      "module": "es6",
+      "lib": ["es2015", "dom"],
+      "outDir": "./public/templates/js",
+      "rootDir": "./src",
+      "strict": true
+  },
+  "include": [
+      "./src/**/*"
+  ],
+  "exclude": [
+      "node_modules",
+      "public"
+  ]
+}
+
