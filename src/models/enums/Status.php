@@ -2,8 +2,9 @@
 
 namespace src\models\enums;
 
-enum Status: string {
-    case NaoIniciada = 'Nao iniciada';
-    case EmProgresso = 'Em progresso';
-    case Concluida = 'Concluida';
+enum Status: string
+{
+    case NAOINICIADA = 'NAOINICIADA';
+    case EMPROGRESSO = 'EMPROGRESSO';
+    case CONCLUIDA = 'CONCLUIDA';
 }

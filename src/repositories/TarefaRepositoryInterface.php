@@ -8,6 +8,7 @@ interface TarefaRepositoryInterface
 {
   public function inserirTarefa(Tarefa $tarefa): mixed;
   public function buscarTarefas(): array;
-  public function atualizarTarefa(Tarefa $tarefa): int;
-  public function deletarTarefa($id): int;
+  public function buscarTarefaPorId(string $id): ?Tarefa;
+  public function atualizarTarefa(Tarefa $tarefa): bool;
+  public function deletarTarefa(string $id): int;
 }
