@@ -25,7 +25,7 @@
                 height: 23px;
                 width: 130px;
                 text-align: center;">
-                <option value="NAOINICIADA">Nao iniciada</option>
+                <option value="NAOINICIADA">Não iniciada</option>
                 <option value="EMPROGRESSO" selected>Em progresso</option>
                 <option value="CONCLUIDA">Concluida</option>
             </select>
@@ -58,7 +58,7 @@
                 <div class="titulo-status" style="background-color: #faedcc;">
                     <div id="circle" style="background: #c39747;">       
                     </div>
-                    <span>Nao iniciado</span>
+                    <span>Não iniciado</span>
                 </div>
                 <div class="titulo-status" style="background-color: #d6e4ee;">
                     <div id="circle" style="background: #6b96b9;">       
@@ -91,31 +91,38 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2 style="text-align: center;">Editar Tarefa</h2>
-      <form id="edit-task-form">
+      <form id="edit-task-form" style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;">
         <input type="hidden" id="edit-task-id" name="id">
         <div class="container-modal">
             <div>
-                <label for="edit-titulo">Título:</label>              
-                <input type="text" id="edit-titulo" name="titulo" required>
+                <label for="edit-titulo"></label>              
+                <input type="text" id="edit-titulo" name="titulo" placeholder="Titulo" style="padding: 5px;
+                border-radius: 10px;
+                border: none;">
                 </div>
             <div style="
             display: flex;
-            flex-direction: column;">
+            flex-direction: row;
+            align-items: center;">
                 <label for="edit-descricao"></label>
-                <textarea id="edit-descricao" name="descricao" required style="
-                min-height: 100px;
-                max-height: 100px;
-                overflow-y: scroll;
-                min-width: 250px;
-                max-width: 250px;"></textarea>
+                <input type="text" id="edit-descricao" name="descricao" placeholder="Descrição" style="padding: 5px;
+                border-radius: 10px;
+                border: none;"></input>
             </div>
-            <div>
-                <label for="edit-dataVencimento">Data de Vencimento:</label>
-                <input type="date" id="edit-dataVencimento" name="dataVencimento" required>
+            <div>   
+                <label for="edit-dataVencimento"></label>
+                <input type="date" id="edit-dataVencimento" name="dataVencimento" required style="padding: 5px;
+                border-radius: 10px;
+                border: none;">
             </div>
             <div>
                 <label for="edit-status"></label>
-                <select id="edit-status" name="status">
+                <select id="edit-status" name="status" style="padding: 5px;
+                border-radius: 10px;
+                border: none;">
                     <option value="NAOINICIADA">Não Iniciada</option>
                     <option value="EMPROGRESSO">Em Progresso</option>
                     <option value="CONCLUIDA">Concluída</option>
@@ -129,7 +136,7 @@
         color: black;
         padding: 2px;
         font-size: 12px;
-        width: 90%;
+        width: 70%;
         margin: 12px 15px;">Salvar</button>
       </form>
     </div>
